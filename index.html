@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Feliz aniversario</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<div id="start">
+  <h1 id="t1" class="g"></h1>
+  <p id="t2"></p>
+  <button class="btn" id="go">💫 Comenzar</button>
+  <p id="warn" hidden>Para ver tus fotos abre el proyecto con un servidor local (Live Server de VS Code) o súbelo a un hosting.</p>
+</div>
+
+<div id="ttl" class="g"></div>
+<div id="days"></div>
+<div id="tools">
+  <button id="mute" hidden title="Música">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+  </button>
+  <button id="fs" title="Pantalla completa">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+  </button>
+</div>
+<div id="hint">Arrastra para girar · Pellizca para acercar · Toca una foto</div>
+
+<div id="modal"><div class="box"><button id="mx">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+</button><img id="mi" alt=""><div id="mm"></div></div></div>
+
+<script src="js/lib/three.min.js"></script>
+<script src="js/lib/CopyShader.js"></script>
+<script src="js/lib/LuminosityHighPassShader.js"></script>
+<script src="js/lib/EffectComposer.js"></script>
+<script src="js/lib/RenderPass.js"></script>
+<script src="js/lib/ShaderPass.js"></script>
+<script src="js/lib/MaskPass.js"></script>
+<script src="js/lib/UnrealBloomPass.js"></script>
+<script src="js/photos-data.js"></script>
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

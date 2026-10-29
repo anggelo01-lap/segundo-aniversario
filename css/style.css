@@ -1,0 +1,47 @@
+@font-face{font-family:Caveat;font-weight:600;src:url(../fonts/caveat-latin-600-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Permanent Marker";src:url(../fonts/permanent-marker-latin-400-normal.woff2) format("woff2");font-display:swap}
+*{box-sizing:border-box;margin:0}
+[hidden]{display:none!important}
+html,body{height:100%;overflow:hidden;background:#030408;color:#cfe9ff;font-family:Caveat,cursive;font-weight:600;-webkit-tap-highlight-color:transparent}
+#c{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none}
+.g{font-family:"Permanent Marker",cursive;font-weight:400;background:linear-gradient(90deg,#00d4ff,#b07bff,#ff4fa8,#00d4ff);background-size:300%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:g 6s ease infinite}
+@keyframes g{50%{background-position:100% 0}}
+#start{position:fixed;inset:0;z-index:30;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px;text-align:center;background:radial-gradient(ellipse at bottom,#10254a,#030408 70%);transition:opacity 1.2s}
+#t1{font-size:clamp(2rem,8vw,3.8rem);line-height:1.15}
+#t2{font-size:clamp(1.4rem,4vw,2rem);color:#87ceeb}
+#warn{max-width:420px;font-size:1.2rem;color:#ffb3d1}
+.btn{font:inherit;font-size:1.7rem;padding:10px 34px;border-radius:40px;border:2px solid #00d4ff;background:rgba(0,212,255,.15);color:#fff;cursor:pointer;box-shadow:0 0 24px rgba(0,212,255,.35);transition:background .3s,box-shadow .3s}
+.btn:hover{background:rgba(0,212,255,.28);box-shadow:0 0 36px rgba(0,212,255,.5)}
+
+/* ===== TÍTULO Y CONTADOR SUPERIORES ===== */
+#ttl{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:0;right:0;text-align:center;font-size:clamp(1.3rem,5vw,2.4rem);pointer-events:none;opacity:0;transition:opacity 2s 1s;z-index:5;padding:4px 70px;
+  text-shadow:0 0 10px rgba(0,0,0,.9),0 0 30px rgba(0,0,0,.7),0 2px 4px rgba(0,0,0,.8)}
+#ttl.on,#days.on{opacity:1}
+#days{position:fixed;top:calc(62px + env(safe-area-inset-top,0px));left:0;right:0;text-align:center;font-size:clamp(1.2rem,4vw,1.7rem);color:#ffb3d1;pointer-events:none;opacity:0;transition:opacity 2s 2s;z-index:5;
+  text-shadow:0 0 8px rgba(255,79,168,.4),0 0 20px rgba(0,0,0,.9),0 2px 4px rgba(0,0,0,.8)}
+
+/* ===== BOTONES DE HERRAMIENTAS (iconos mejorados) ===== */
+#tools{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));right:10px;z-index:10;display:flex;gap:8px}
+#tools button{
+  width:44px;height:44px;border-radius:50%;
+  border:1.5px solid rgba(0,212,255,.5);
+  background:rgba(5,6,13,.75);
+  backdrop-filter:blur(6px);
+  color:#00d4ff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .25s,border-color .25s,transform .15s;
+  box-shadow:0 2px 12px rgba(0,0,0,.5)}
+#tools button:hover{background:rgba(0,212,255,.18);border-color:#00d4ff;transform:scale(1.08)}
+#tools button:active{transform:scale(.95)}
+
+#hint{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;font-size:1.4rem;color:#87ceeb;pointer-events:none;transition:opacity 1.5s;z-index:5;
+  text-shadow:0 0 12px rgba(0,0,0,.9),0 2px 4px rgba(0,0,0,.7)}
+
+/* ===== MODAL ===== */
+#modal{position:fixed;inset:0;z-index:40;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.85);backdrop-filter:blur(10px)}
+#modal.on{display:flex}
+.box{position:relative;max-width:min(94vw,560px);max-height:92vh;overflow:auto;padding:30px 20px 20px;text-align:center;border-radius:20px;border:2px solid rgba(0,191,255,.45);background:linear-gradient(135deg,#0d1d31f0,#0c0d13f0);box-shadow:0 0 40px rgba(0,191,255,.2),inset 0 1px 0 rgba(255,255,255,.04)}
+.box img{max-width:100%;max-height:55vh;border-radius:14px;box-shadow:0 0 24px rgba(0,191,255,.35)}
+#mm{font-size:clamp(1.6rem,5vw,2.4rem);margin-top:14px;white-space:pre-wrap;overflow-wrap:anywhere;color:#87ceeb;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+#mx{position:absolute;top:8px;right:8px;width:34px;height:34px;border-radius:50%;border:1.5px solid rgba(0,212,255,.5);background:rgba(5,6,13,.8);color:#fff;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .15s}
+#mx:hover{background:rgba(255,60,100,.4);transform:scale(1.1)}
